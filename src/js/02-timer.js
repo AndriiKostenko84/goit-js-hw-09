@@ -26,6 +26,12 @@ const options = {
         } else {
              Notify.failure('Please choose a date in the future');
       }
-    console.log(selectedDates[0]);
   },
 };
+
+flatpickr('input#datetime-picker', options);
+
+startBtnEl.addEventListener('click', () => {
+    startBtnEl.disabled = true;
+    intervalId = setInterval(count, 1000);
+});
